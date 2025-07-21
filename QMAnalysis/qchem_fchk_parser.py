@@ -123,6 +123,8 @@ class QChemFChk():
 	def get_mos(self, type='mo'):
 		if type == 'mo':
 			return self.fchk_get_last_double_values("Alpha MO coefficients")
+		elif type == 'b-mo':
+			return self.fchk_get_last_double_values("Beta MO coefficients")
 		elif type == 'frz':
 			return self.fchk_get_last_double_values("Alpha FRZ coefficients")
 		elif type == 'almo':
@@ -135,6 +137,14 @@ class QChemFChk():
 			return self.fchk_get_last_double_values("Alpha Proj coefficients")
 		elif type == 'pcanon':
 			return self.fchk_get_last_double_values("Alpha pseudocanonical coeff")
+		elif type == 'ibo-a':
+			return self.fchk_get_last_double_values("Localized Alpha MO Coefficients (IBO)")
+		elif type == 'ibo-b':
+			return self.fchk_get_last_double_values("Localized Beta  MO Coefficients (IBO)")
+		elif type == 'oslo-a':
+			return self.fchk_get_last_double_values("Localized Alpha MO Coefficients (OSLO)")
+		elif type == 'oslo-b':
+			return self.fchk_get_last_double_values("Localized Beta  MO Coefficients (OSLO)")
 
 	def get_mo_energies(self):
 		return self.fchk_get_last_double_values("Alpha Orbital Energies")

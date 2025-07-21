@@ -150,7 +150,8 @@ class QMSystem():
 		write_cube(cube_file, self.molecule, self.grid, mo_on_grid)
 
 		#generate image file
-		make_jmol_isosurface_plot(img_file, cube_file)
+		if img_file is not None:
+			make_jmol_isosurface_plot(img_file, cube_file)
 
 
 	def plot_selected_mos(self, mo_list, grid_size=0.1, type='mo'):
@@ -236,7 +237,8 @@ class QMSystem():
 		write("value: %f cutoff: %f\n" % (value, cutoff))
 
 		#generate image file
-		make_jmol_isosurface_plot(img_file, cube_file, cutoff)
+		if img_file is not None:
+			make_jmol_isosurface_plot(img_file, cube_file, cutoff)
 
 	def plot_almo_density(self, type, name, ifrag, grid_size=0.1):
 		if type == 'almo-frz':
@@ -306,7 +308,8 @@ class QMSystem():
 		write("value: %f cutoff: %f\n" % (value, cutoff))
 
 		#generate image file
-		make_jmol_isosurface_plot(img_file, cube_file, cutoff)
+		if img_file is not None:
+			make_jmol_isosurface_plot(img_file, cube_file, cutoff)
 
 	""" plot the average local ionization energy, Politzer et al, Can. J. Chem. 68, 1440 (1990)"""
 	def plot_average_local_ionization_energy(self, grid_size=0.1):
@@ -340,7 +343,8 @@ class QMSystem():
 		write("value: %f cutoff: %f\n" % (value, cutoff))
 
 		#generate image file
-		make_jmol_isosurface_plot(img_file, cube_file, cutoff)
+		if img_file is not None:
+			make_jmol_isosurface_plot(img_file, cube_file, cutoff)
 
 	def plot_tda_excited_state_densities(self, state_list, grid_size=0.1):
 
